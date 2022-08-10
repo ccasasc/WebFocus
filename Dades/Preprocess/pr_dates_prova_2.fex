@@ -1,0 +1,16 @@
+
+-* MRNOEDIT -INCLUDE hsp_farmacia/fitxer_init_dates.fex
+
+-* &SELECTOR.(FIND TITOL IN hsp_general/1_sinonim/dimensions/d_temps_resum).Selector de dates:;
+
+
+-DEFAULT &DIA_INICI  = 01012020;
+-DEFAULT &DIA_FI  = 31012020;
+-DEFAULT &DIA_INICI_COMP = 01012019;
+-DEFAULT &DIA_FI_COMP = 31012019;
+
+-SET &&DIA_INICI=&DIA_INICI;
+-SET &&DIA_FI=&DIA_FI;
+-SET &&DIA_INICI_COMP=&DIA_INICI_COMP;
+-SET &&DIA_FI_COMP=&DIA_FI_COMP;
+

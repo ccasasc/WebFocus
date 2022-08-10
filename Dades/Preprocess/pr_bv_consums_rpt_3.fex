@@ -1,0 +1,19 @@
+-*Incluye un fichero guardado en el servidor, por ese motivo está el COMANDO -MRNOEDIT y no -INCLUDE como sí se hizo en el preproceso del Reporting Object. En este caso, el preproceso se encuentra guardado en el lado del cliente de WebFOCUS
+-MRNOEDIT -INCLUDE hsp_farmacia/fechas_rpt_consums.fex
+-SET &ANY_CONSUM_ANT=&ANY_CONSUM-1;
+-SET &DIA_INICI = &DMYY;
+-*-TYPE &DIA_INICI
+-SET &DIA_FI  = &DMYY;
+-DEFAULT &DIA_INICI_COMP = 20190101;
+-DEFAULT &DIA_FI_COMP = 20190131;
+-*-DEFAULT &&FECHA_DATOS=20200601;
+-*-TYPE &ANY_CONSUM &ANY_CONSUM_ANT
+
+
+-* Actualizar variables del metadato en función del automprompt y cálcula anterior.
+-SET &&ANY_CONSUM=&ANY_CONSUM;
+-SET &&ANY_CONSUM_ANT=&ANY_CONSUM_ANT;
+-SET &&DIA_INICI=&DIA_INICI;
+-SET &&DIA_FI=&DIA_FI;
+-SET &&DIA_INICI_COMP=&DIA_INICI_COMP;
+-SET &&DIA_FI_COMP=&DIA_FI_COMP;

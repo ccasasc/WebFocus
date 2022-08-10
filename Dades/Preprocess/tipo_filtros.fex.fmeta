@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rootObject _jt="IBFSMRObject" binary="false" defaultLng="en_US" dummy="false" expireDate="0" length="0" type="FexFile">
+    <properties size="2">
+        <entry key="LastDescribed" value="1660123675459"/>
+        <entry key="tool" value="editor"/>
+    </properties>
+    <extendedProperties _jt="HashMap" loadFactor="0.75" threshold="0"/>
+    <nlsValues _jt="HashMap" loadFactor="0.75" threshold="12">
+        <entry>
+            <key _jt="string" value="en_US"/>
+            <value _jt="ArrayList" size="2">
+                <item _jt="string" index="0" value="tipo_filtros"/>
+            </value>
+        </entry>
+    </nlsValues>
+    <fexParameters _jt="ArrayList" size="1">
+        <item _jt="IBRFexParameter" amperFormat="A1" datadomain="FILTRO" description="Tipo Filtro" index="0" multiselect="false" parent="" parmname="FILTRO" required="false">
+            <amperVarType class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+            <amperVar aggType="" amperIdx="10" chainIdx="-1" class="com.ibi.wfrs.IBFSWFDescribe$AmperVar" description="Tipo Filtro" format="A1" idxInChain="-1" inForm="true" isDefault="true" max="0.0" min="0.0" name="FILTRO" noSelection="false" operation="" parent="" proc="" sortFields="" sortOrder="" strDef="1" validate="">
+                <type class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+                <userDefValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="1"/>
+                </userDefValues>
+                <defValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="1"/>
+                </defValues>
+                <displayType class="com.ibi.wfrs.IBFSAmperDisplayType" name="staticType"/>
+                <values accessOrder="false" class="java.util.LinkedHashMap" loadFactor="0.75" threshold="12">
+                    <entry>
+                        <key _jt="string" value="Rango Fechas"/>
+                        <value _jt="string" value="1"/>
+                    </entry>
+                    <entry>
+                        <key _jt="string" value="Rango Fechas Comparativo"/>
+                        <value _jt="string" value="2"/>
+                    </entry>
+                </values>
+                <parameters _jt="HashMap" loadFactor="0.75" threshold="12">
+                    <entry>
+                        <key _jt="string" value="quotedstring"/>
+                        <value _jt="string" value="YES"/>
+                    </entry>
+                </parameters>
+            </amperVar>
+        </item>
+    </fexParameters>
+</rootObject>

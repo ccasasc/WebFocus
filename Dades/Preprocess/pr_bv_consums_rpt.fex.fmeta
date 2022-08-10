@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rootObject _jt="IBFSMRObject" binary="false" defaultLng="en_US" dummy="false" expireDate="0" length="0" type="FexFile">
+    <properties size="2">
+        <entry key="LastDescribed" value="1660123679194"/>
+        <entry key="tool" value="editor"/>
+    </properties>
+    <extendedProperties _jt="HashMap" loadFactor="0.75" threshold="0"/>
+    <nlsValues _jt="HashMap" loadFactor="0.75" threshold="12">
+        <entry>
+            <key _jt="string" value="en_US"/>
+            <value _jt="ArrayList" size="2">
+                <item _jt="string" index="0" value="pr_bv_consums_rpt"/>
+            </value>
+        </entry>
+    </nlsValues>
+    <fexParameters _jt="ArrayList" size="1">
+        <item _jt="IBRFexParameter" amperFormat="" datadomain="ANY_CONSUM" index="0" multiselect="false" parent="" parmname="ANY_CONSUM" required="true">
+            <amperVarType class="com.ibi.wfrs.IBFSAmperVarType" name="unresolved"/>
+            <amperVar aggType="" amperIdx="10" chainIdx="-1" class="com.ibi.wfrs.IBFSWFDescribe$AmperVar" format="" idxInChain="-1" inForm="true" isDefault="false" max="0.0" min="0.0" name="ANY_CONSUM" noSelection="false" parent="" proc="" sortFields="" sortOrder="" validate="">
+                <type class="com.ibi.wfrs.IBFSAmperVarType" name="unresolved"/>
+                <userDefValues _jt="array" itemsClass="string" size="0"/>
+                <defValues _jt="array" itemsClass="string" size="0"/>
+                <displayType class="com.ibi.wfrs.IBFSAmperDisplayType" name="prompt"/>
+                <values accessOrder="false" class="java.util.LinkedHashMap" loadFactor="0.75" threshold="0"/>
+                <parameters _jt="HashMap" loadFactor="0.75" threshold="0"/>
+            </amperVar>
+        </item>
+    </fexParameters>
+</rootObject>

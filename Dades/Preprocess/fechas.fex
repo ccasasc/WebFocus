@@ -1,0 +1,147 @@
+-*
+-* Se recibe FECHA_DATOS año-mes-dia actual. 
+-*
+-SET &&FECHA_DATOS= &YYMD;
+-*-SET &&FECHA_DATOS=20200601;
+-TYPE Fecha datos ejecución, formato 'yyyymmdd': &&FECHA_DATOS
+-*
+-* La carga de datos, es del mes anterior al recibido como parámetro
+-*
+-SET &ANO_MES1 = DATECVT(&&FECHA_DATOS,'I8YYMD', 'YYMD');
+-TYPE Prueba0: &ANO_MES1
+-SET &ANO_MES2 = DATEADD(&ANO_MES1,'M',-1);
+-*-TYPE Prueba1: &PRUEBA1
+-SET &ANO_MES3 = DATECVT(&ANO_MES2,'YYMD','A8YYMD');
+-TYPE Prueba2: &ANO_MES3
+-SET &&ANO_MES = EDIT(&ANO_MES3,'999999');
+-TYPE Fecha de carga de datos (mismo año - mes anterior
+-TYPE al recibido como parámetro), formato 'yyyymm': &&ANO_MES
+-*
+-* Tratamiento de fechas, para obtener "Mismo año - mes - último día del mes" de la fecha de carga de datos
+-*
+-SET &CONCAT_01 = EDIT(&&ANO_MES, '99999901');
+-*-TYPE &CONCAT_01
+-SET &CONCAT_01X = DATECVT(&CONCAT_01,'I8YYMD', 'YYMD');
+-*-TYPE &CONCAT_01X
+-SET &FEC_ULT_DIA_MES = DATEMOV(&CONCAT_01X, 'EOM');
+-*-TYPE &FEC_ULT_DIA_MES
+-*
+-SET &&FECHA_FIN_MES = DATECVT(&FEC_ULT_DIA_MES,'YYMD','A8YYMD');
+-TYPE Fecha mismo año - mes - último día del mes, 
+-TYPE de la fecha de carga: &&FECHA_FIN_MES
+ 
+-*INICIO PILAR_20191213
+-*Tratamiento de fechas, para obtener "Mismo año - mes - primer día del mes" de la fecha de carga de datos
+-SET &&FEC_DIA1_MES = EDIT(&&FECHA_FIN_MES, '99999901');
+-TYPE Fecha mismo año - mes - primer día del mes, 
+-TYPE de la fecha de carga: &&FEC_DIA1_MES
+ 
+ 
+-*Tratamiento de fechas, para obtener "Mismo año - mes - primer día del mes siguiente" de la fecha de carga de datos
+-SET &&FEC_DIA1_MES_SGTE = EDIT(&&FECHA_DATOS, '99999901');
+-TYPE Fecha mismo año - mes siguiente - primer día del mes, 
+-TYPE de la fecha de carga: &&FEC_DIA1_MES_SGTE
+ 
+ 
+-*Tratamiento de fechas, para obtener "Mismo año - mes - último día del mes siguiente" de la fecha de carga de datos 
+-SET &AUX_FEC_FIN_MES_SIG = DATECVT(&&FEC_DIA1_MES_SGTE,'I8YYMD', 'YYMD');
+-SET &AUX2_FEC_FIN_MES_SIG = DATEADD(&AUX_FEC_FIN_MES_SIG,'M',1)-1;
+-SET &&FECHA_FIN_MES_SIG = DATECVT(&AUX2_FEC_FIN_MES_SIG,'YYMD','A8YYMD'); 
+-TYPE Último día mes de la fecha datos &&FECHA_FIN_MES_SIG
+ 
+ 
+-*Tratamiento de fechas, para obtener "Mismo año - primer día del año" de la fecha de carga de datos
+-SET &&FEC_DIA1_ANO = EDIT(&&FECHA_FIN_MES, '99990101');
+-TYPE Fecha mismo año - primer día del año, 
+-TYPE de la fecha de carga: &&FEC_DIA1_ANO
+-*FIN PILAR_20191213
+ 
+-*
+-* Tratamiendo de fechas, para obtener "Mismo año -  mes anterior - último día del mes" de la fecha de carga de datos
+-*
+-SET &FECHA_FIN_MANTX = DATEADD(&FEC_ULT_DIA_MES,'M',-1);
+-*-TYPE Calc 1 - Fin mes anterior: &FECHA_FIN_MANTX
+-SET &FECHA_FIN_MANTZ = DATEMOV(&FECHA_FIN_MANTX , 'EOM');
+-*-TYPE Calc 2 - Fin mes anterior &FECHA_FIN_MANTZ
+-SET &&FECHA_FIN_MANT = DATECVT(&FECHA_FIN_MANTZ,'YYMD','A8YYMD');
+-TYPE Fecha mismo año - mes anterior - último día del mes, 
+-TYPE de la fecha de carga: &&FECHA_FIN_MANT
+-*
+-* Tratamiento de fechas, para obtener "Mismo año - 2 meses anteriores - último día del mes" de la fecha de carga
+-*
+-SET &FECHA_FM_2MANTX = DATEADD(&FEC_ULT_DIA_MES,'M',-2);
+-*-TYPE Calc 1 - Fin 2 mes anterior: &FECHA_FM_2MANTX
+-SET &FECHA_FM_2MANTZ = DATEMOV(&FECHA_FM_2MANTX , 'EOM');
+-*-TYPE Calc 2 - Fin 2 mes anterior &FECHA_FM_2MANTZ
+-SET &&FECHA_FM_2MANT = DATECVT(&FECHA_FM_2MANTZ,'YYMD','A8YYMD');
+-TYPE Fecha mismo año - 2 meses anteriores - último día del mes, 
+-TYPE de la fecha de carga: &&FECHA_FM_2MANT
+-*
+-*
+-* Tratamiento de fechas, para obtener "Mismo año - 3 meses anteriores - último día del mes" de la fecha de carga
+-*
+-SET &FECHA_FM_3MANTX = DATEADD(&FEC_ULT_DIA_MES,'M',-3);
+-*-TYPE Calc 1 - Fin 2 mes anterior: &FECHA_FM_2MANTX
+-SET &FECHA_FM_3MANTZ = DATEMOV(&FECHA_FM_3MANTX , 'EOM');
+-*-TYPE Calc 2 - Fin 2 mes anterior &FECHA_FM_2MANTZ
+-SET &&FECHA_FM_3MANT = DATECVT(&FECHA_FM_3MANTZ,'YYMD','A8YYMD');
+-TYPE Fecha mismo año - 3 meses anteriores - último día del mes, 
+-TYPE de la fecha de carga: &&FECHA_FM_3MANT
+ 
+-* Tratamiento de fechas, para obtener "Mismo año - 3 meses posteriores - último día del mes" de la fecha de carga
+-*
+-SET &FECHA_FM_3MPOSX = DATEADD(&FEC_ULT_DIA_MES,'M',3);
+-*-TYPE Calc 1 - Fin 2 mes anterior: &FECHA_FM_2MANTX
+-SET &FECHA_FM_3MPOSZ = DATEMOV(&FECHA_FM_3MPOSX , 'EOM');
+-*-TYPE Calc 2 - Fin 2 mes anterior &FECHA_FM_2MANTZ
+-SET &&FECHA_FM_3MPOS = DATECVT(&FECHA_FM_3MPOSZ,'YYMD','A8YYMD');
+-TYPE Fecha mismo año - 3 meses posteriores - último día del mes, 
+-TYPE de la fecha de carga: &&FECHA_FM_3MPOS
+ 
+ 
+-* Tratamiento de fechas, para obtener "Año anterior - mes - último día del mes" de la fecha de carga
+-*
+-SET &FECHA_FM_AANTX = DATEADD(&FEC_ULT_DIA_MES,'M',-12);
+-*-TYPE Calc 1 - Fin 2 meses dateadd: &FIN_MES_ANTZ
+-SET &FECHA_FM_AANTZ = DATEMOV(&FECHA_FM_AANTX , 'EOM');
+-*-TYPE Calc 2 - Fecha fin 2 meses anteriores: &&MEN_FIN_MES_ANTZ
+-SET &&FECHA_FM_AANT = DATECVT(&FECHA_FM_AANTZ,'YYMD','A8YYMD');
+-TYPE Fecha año anterior - mes - último día del mes, 
+-TYPE de la fecha de carga: &&FECHA_FM_AANT
+-*
+-* Tratamiento de fechas, para obtener "Año anterior - mes anterior - último día del mes" de la fecha de carga
+-*
+-SET &FECHA_FM_MAANTX = DATEADD(&FECHA_FM_AANTZ,'M',-1);
+-*-TYPE Calc 1 - Fin mes anterior: &FECHA_FM_MAANTX
+-SET &FECHA_FM_MAANTZ = DATEMOV(&FECHA_FM_MAANTX , 'EOM');
+-*-TYPE Calc 2 - Fin mes anterior &FECHA_FM_MAANTZ
+-SET &&FECHA_FM_MAANT = DATECVT(&FECHA_FM_MAANTZ,'YYMD','A8YYMD');
+-TYPE Fecha año anterior - mes anterior - último día del mes, 
+-TYPE de la fecha de carga: &&FECHA_FM_MAANT
+-*
+-* Tratamiento de fechas, para obtener "Año anterior - 2 meses anteriores - último día del mes" de la fecha de carga
+-*
+-SET &FECHA_FM_2MAANTX = DATEADD(&FECHA_FM_AANTZ,'M',-2);
+-*-TYPE Calc 1 - Fin mes anterior: &FECHA_FM_MAANTX
+-SET &FECHA_FM_2MAANTZ = DATEMOV(&FECHA_FM_2MAANTX , 'EOM');
+-*-TYPE Calc 2 - Fin mes anterior &FECHA_FM_MAANTZ
+-SET &&FECHA_FM_2MAANT = DATECVT(&FECHA_FM_2MAANTZ,'YYMD','A8YYMD');
+-TYPE Fecha año anterior - 2 meses anteriores - último día del mes, 
+-TYPE de la fecha de carga: &&FECHA_FM_2MAANT
+ -*
+ 
+-*Tratamiento de fechas, para obtener "Año anterior - último día del mes" de la fecha de carga de datos
+-SET &&FECHA_FIN_AANT =EDIT(&&FECHA_FM_AANT.EVAL,'99991231');
+-TYPE Fecha año anterior - último día del mes, de la fecha de carga: &&FECHA_FIN_AANT
+ 
+ 
+-*Tratamiento de fechas, para obtener "Fin de trimestre" de la fecha de carga de datos
+-SET &FECHA_FIN_TRIM = DATEMOV(DATECVT(&&FECHA_FIN_MES.EVAL,'I8YYMD', 'YYMD'), 'EOQ');
+-SET &&FECHA_FIN_TRIM = DATECVT(&FECHA_FIN_TRIM,'YYMD','A8YYMD');
+-TYPE Fecha fin de trimestre: &&FECHA_FIN_TRIM
+ 
+-TYPE ------------------------------------------------
+-TYPE FECHA_FIN_MES: &&FECHA_FIN_MES.EVAL
+-TYPE ------------------------------------------------
+ 
+ 

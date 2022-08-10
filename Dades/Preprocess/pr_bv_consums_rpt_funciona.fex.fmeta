@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rootObject _jt="IBFSMRObject" binary="false" defaultLng="es_ES" dummy="false" expireDate="0" length="0" type="FexFile">
+    <properties size="2">
+        <entry key="LastDescribed" value="1660123677612"/>
+        <entry key="tool" value="editor"/>
+    </properties>
+    <extendedProperties _jt="HashMap" loadFactor="0.75" threshold="0"/>
+    <nlsValues _jt="HashMap" loadFactor="0.75" threshold="12">
+        <entry>
+            <key _jt="string" value="es_ES"/>
+            <value _jt="ArrayList" size="2">
+                <item _jt="string" index="0" value="pr_bv_consums_rpt_funciona"/>
+            </value>
+        </entry>
+    </nlsValues>
+    <fexParameters _jt="ArrayList" size="4">
+        <item _jt="IBRFexParameter" amperFormat="" datadomain="DIA_INICI" index="0" multiselect="false" parent="" parmname="DIA_INICI" required="false">
+            <amperVarType class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+            <amperVar aggType="" amperIdx="10" chainIdx="-1" class="com.ibi.wfrs.IBFSWFDescribe$AmperVar" format="" idxInChain="-1" inForm="true" isDefault="true" max="0.0" min="0.0" name="DIA_INICI" noSelection="false" parent="" proc="" sortFields="" sortOrder="" strDef="01012020" validate="">
+                <type class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+                <userDefValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="01012020"/>
+                </userDefValues>
+                <defValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="01012020"/>
+                </defValues>
+                <displayType class="com.ibi.wfrs.IBFSAmperDisplayType" name="prompt"/>
+                <values accessOrder="false" class="java.util.LinkedHashMap" loadFactor="0.75" threshold="0"/>
+                <parameters _jt="HashMap" loadFactor="0.75" threshold="0"/>
+            </amperVar>
+        </item>
+        <item _jt="IBRFexParameter" amperFormat="" datadomain="DIA_FI" index="1" multiselect="false" parent="" parmname="DIA_FI" required="false">
+            <amperVarType class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+            <amperVar aggType="" amperIdx="11" chainIdx="-1" class="com.ibi.wfrs.IBFSWFDescribe$AmperVar" format="" idxInChain="-1" inForm="true" isDefault="true" max="0.0" min="0.0" name="DIA_FI" noSelection="false" parent="" proc="" sortFields="" sortOrder="" strDef="31012020" validate="">
+                <type class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+                <userDefValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="31012020"/>
+                </userDefValues>
+                <defValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="31012020"/>
+                </defValues>
+                <displayType class="com.ibi.wfrs.IBFSAmperDisplayType" name="prompt"/>
+                <values accessOrder="false" class="java.util.LinkedHashMap" loadFactor="0.75" threshold="0"/>
+                <parameters _jt="HashMap" loadFactor="0.75" threshold="0"/>
+            </amperVar>
+        </item>
+        <item _jt="IBRFexParameter" amperFormat="" datadomain="DIA_INICI_COMP" index="2" multiselect="false" parent="" parmname="DIA_INICI_COMP" required="false">
+            <amperVarType class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+            <amperVar aggType="" amperIdx="12" chainIdx="-1" class="com.ibi.wfrs.IBFSWFDescribe$AmperVar" format="" idxInChain="-1" inForm="true" isDefault="true" max="0.0" min="0.0" name="DIA_INICI_COMP" noSelection="false" parent="" proc="" sortFields="" sortOrder="" strDef="01012019" validate="">
+                <type class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+                <userDefValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="01012019"/>
+                </userDefValues>
+                <defValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="01012019"/>
+                </defValues>
+                <displayType class="com.ibi.wfrs.IBFSAmperDisplayType" name="prompt"/>
+                <values accessOrder="false" class="java.util.LinkedHashMap" loadFactor="0.75" threshold="0"/>
+                <parameters _jt="HashMap" loadFactor="0.75" threshold="0"/>
+            </amperVar>
+        </item>
+        <item _jt="IBRFexParameter" amperFormat="" datadomain="DIA_FI_COMP" index="3" multiselect="false" parent="" parmname="DIA_FI_COMP" required="false">
+            <amperVarType class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+            <amperVar aggType="" amperIdx="13" chainIdx="-1" class="com.ibi.wfrs.IBFSWFDescribe$AmperVar" format="" idxInChain="-1" inForm="true" isDefault="true" max="0.0" min="0.0" name="DIA_FI_COMP" noSelection="false" parent="" proc="" sortFields="" sortOrder="" strDef="31012019" validate="">
+                <type class="com.ibi.wfrs.IBFSAmperVarType" name="defaultType"/>
+                <userDefValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="31012019"/>
+                </userDefValues>
+                <defValues _jt="array" itemsClass="string" size="1">
+                    <item _jt="string" index="0" value="31012019"/>
+                </defValues>
+                <displayType class="com.ibi.wfrs.IBFSAmperDisplayType" name="prompt"/>
+                <values accessOrder="false" class="java.util.LinkedHashMap" loadFactor="0.75" threshold="0"/>
+                <parameters _jt="HashMap" loadFactor="0.75" threshold="0"/>
+            </amperVar>
+        </item>
+    </fexParameters>
+</rootObject>

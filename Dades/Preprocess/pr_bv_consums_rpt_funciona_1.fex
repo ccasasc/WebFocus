@@ -1,0 +1,34 @@
+-*Incluye un fichero guardado en el servidor, por ese motivo está el COMANDO -MRNOEDIT y no -INCLUDE como sí se hizo en el preproceso del Reporting Object. En este caso, el preproceso se encuentra guardado en el lado del cliente de WebFOCUS
+-* -SET &TITOL = &TITOL.(FIND TITOL IN hsp_general/1_sinonim/dimensions/d_temps_resum).;
+-* -TYPE &TITOL
+-MRNOEDIT -INCLUDE hsp_farmacia/inicialitzar_variables_dates_cmm.fex
+
+-*-MRNOEDIT -INCLUDE hsp_farmacia/fitxer_init_dates_cmm.fex
+-DEFAULT &DIA_INICI  = 01012020;
+-DEFAULT &DIA_FI  = 31012020;
+-DEFAULT &DIA_INICI_COMP = 01012019;
+-DEFAULT &DIA_FI_COMP = 31012019;
+
+
+-* Actualizar variables del metadato en función del automprompt y cálcula anterior.
+-* &TITOL='A SELECCIONAR'
+
+-*-IF  &TITOL EQ 'LLIURE SELECCIÓ DE DATES' THEN CONTINUE ELSE GOTO DATES_PRECALCULADES;
+-IF &TITOL NE 'LLIURE SELECCIÓ DE DATES' THEN GOTO DATES_PRECALCULADES;
+
+-TYPE &TITOL
+-SET &&DIA_INICI = &DIA_INICI;
+-SET &&DIA_FI = &DIA_FI;
+-SET &&DIA_INICI_COMP = &DIA_INICI_COMP;
+-SET &&DIA_FI_COMP = &DIA_FI_COMP;
+-GOTO DONE
+
+-DATES_PRECALCULADES
+-* -* -TYPE &&DIA_INICI
+-SET &&DIA_INICI = &DIA_INICI_ACUM;
+-SET &&DIA_FI=&DIA_FI_ACUM;
+-SET &&DIA_INICI_COMP=&DIA_INICI_ACUM_COMP;
+-SET &&DIA_FI_COMP=&DIA_FI_ACUM_COMP;
+
+
+-DONE
